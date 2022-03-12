@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
-from dj_database_url
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-2z!&j8cv0@gfv-dm(_8m(i9z1-04l^u5mo9q=7zmse2sznb^m(
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'stormy-sierra-68913.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'shielded-escarpment-48215.herokuapp.com']
 
 
 # Application definition
