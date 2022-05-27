@@ -1,4 +1,4 @@
-#Array.reduce() Method Practice
+# Array.reduce() Method Practice
 
 ## This was practice to understant how the reduce() method works.
 
