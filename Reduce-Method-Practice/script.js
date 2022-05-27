@@ -64,6 +64,8 @@ const result = people.reduce((groupedPeople, person) => {
 
 // ? The fourth parameter is array. And it's value is the same array7 that you're actually looping or iterating over.
 
+// ! NOTE: if no default parameter is set to the second argument in the reduce method, the first value in the array is gonne act as the default starting value. THIS IS NOT RECOMMENDED BECAUSE IF THE ARRAY IS STARTING OUT EMPTY IT"LL ERROR OUT BECAUSE THE STARTING VALUE WOULD BE UNDEFINED
+
 const numbers = [13, 2, 5];
 
 const sum = numbers.reduce((total, number, index, array) => {
