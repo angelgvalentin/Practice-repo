@@ -27,5 +27,27 @@ public class CountOfPosSumOfNegs {
         return arr;
     }
 
+        //Another solution
+//    public static int[] countPositivesSumNegatives(int[] input)
+//    {
+//
+//        if (input == null || input.length == 0) {
+//            return new int[0];
+//        }
+//
+//        int sum = 0;
+//        int count = 0;
+//
+//        for ( int x : input ){
+//            if ( x > 0) {
+//                count++;
+//            } else {
+//                sum += x;
+//            }
+//        }
+//        return new int[] {count, sum};
+//
+//    }
+
 
 }
