@@ -3,6 +3,7 @@ package com.groceryredo.groceryredo.Grocery.controller;
 
 import com.groceryredo.groceryredo.Grocery.model.Grocery;
 import com.groceryredo.groceryredo.Grocery.repository.GroceryRepository;
+import com.groceryredo.groceryredo.Grocery.service.GroceryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,40 +16,39 @@ import java.util.*;
 
 public class GroceryController {
 
-    @Autowired
-    public GroceryRepository groceryRepository;
+    private final GroceryService groceryService;
 
-    @GetMapping()
+    @Autowired
+    public GroceryController(GroceryService groceryService) {
+        this.groceryService = groceryService;
+    }
+
+    @GetMapping
     public List<Grocery> getAllGrocery() {
-        return groceryRepository.findAll();
+        return groceryService.getAllGrocery();
     }
 
     @GetMapping("/{id}")
     public Optional<Grocery> getSpecificGrocery(@PathVariable long id) {
-        return groceryRepository.findById(id);
+        return groceryService.getSpecificGrocery(id);
     }
 
     @PostMapping
     public Grocery postGrocery(@RequestBody Grocery grocery) {
-        return groceryRepository.save(grocery);
+        return groceryService.postGrocery(grocery);
     }
 
     @PutMapping("/{id}")
     public Optional<Grocery> updateGrocery (@RequestBody Grocery grocery, @PathVariable long id) {
-     Optional<Grocery> oldGrocery = groceryRepository.findById(id);
+     return  groceryService.updateGrocery(grocery, id);
 
-        return oldGrocery.map(updateInfo -> {
-            updateInfo.setName(grocery.getName());
-            updateInfo.setImage(grocery.getImage());
-            updateInfo.setQuantity(grocery.getQuantity());
-           return  groceryRepository.save(updateInfo);
-        });
+
 
     }
 
     @DeleteMapping("/{id}")
     public void deleteGrocery(@PathVariable long id) {
-        groceryRepository.deleteById(id);
+        groceryService.deleteGrocery(id);
     }
 
 
