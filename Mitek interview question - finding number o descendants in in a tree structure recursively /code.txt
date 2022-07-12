@@ -1,0 +1,9 @@
+public static int GetNumDesc(TreeNode node)
+{
+int count = 0;
+
+foreach (TreeNode aNode in node.children)
+count += GetNumDesc(aNode) + 1;
+
+return count;
+}
