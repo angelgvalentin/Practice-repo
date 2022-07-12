@@ -7,3 +7,5 @@ count += GetNumDesc(aNode) + 1;
 
 return count;
 }
+
+//have not tested this code
